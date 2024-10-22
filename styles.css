@@ -1,0 +1,152 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Couleur d'arrière-plan douce */
+    color: #333; /* Couleur du texte */
+    padding: 20px;
+    padding-bottom: 50px; /* Ajout de padding pour le contenu afin d'éviter que le texte ne soit caché sous le footer */
+    transition: background-color 0.3s, color 0.3s; /* Transitions pour le mode sombre */
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* En-tête */
+header {
+    background: #35424a; /* Couleur de fond de l'en-tête */
+    color: #ffffff; /* Couleur du texte de l'en-tête */
+    padding: 10px 20px;
+    text-align: center;
+    position: relative; /* Permet au bouton d'être positionné relativement à l'en-tête */
+}
+
+/* Positionnement du bouton du mode sombre à droite dans l'en-tête */
+#toggle-dark-mode {
+    position: absolute;
+    top: 10px;
+    right: 20px; /* Aligne le bouton à droite, en gardant un espace de 20px */
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggle-dark-mode:hover {
+    background-color: #e6b800;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    margin: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #ffffff; /* Couleur des liens */
+    text-decoration: none;
+    transition: color 0.3s; /* Effet de transition sur le survol */
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Couleur au survol */
+}
+
+/* Contenu principal */
+.container {
+    background: #ffffff; /* Couleur de fond du contenu clair */
+    padding: 20px;
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: background-color 0.3s, color 0.3s; /* Transition pour le mode sombre */
+}
+
+h2 {
+    color: #35424a; /* Couleur des titres */
+    margin-bottom: 15px;
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #35424a; /* Couleur de fond du pied de page */
+    color: #ffffff; /* Couleur du texte du pied de page */
+    position: fixed; /* Fixe le pied de page en bas de la fenêtre */
+    bottom: 0; /* Colle le pied de page en bas */
+    width: 100%;
+    transition: background-color 0.3s; /* Transition pour le mode sombre */
+    left: 0; /* S'assure que le pied de page s'étend sur toute la largeur */
+}
+
+/* Styles pour les boutons */
+button {
+    background-color: #ffcc00; /* Couleur de fond des boutons */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Effet de transition */
+}
+
+button:hover {
+    background-color: #e6b800; /* Couleur au survol */
+}
+
+/* Styles pour le mode sombre */
+body.dark-mode {
+    background-color: #121212; /* Couleur d'arrière-plan sombre */
+    color: #ffffff; /* Couleur du texte clair */
+}
+
+header.dark-mode {
+    background: #35424a; /* Couleur de fond de l'en-tête (inchangée) */
+}
+
+.container {
+    background: #ffffff; /* Garder le fond clair dans le contenu même en mode sombre */
+    color: #333; /* Garder la couleur du texte claire */
+}
+
+footer.dark-mode {
+    background: #1f1f1f; /* Couleur de fond du pied de page sombre */
+}
+
+/* Boutons en mode sombre */
+button.dark-mode {
+    background-color: #3a3a3a; /* Couleur de fond des boutons sombres */
+    color: #ffcc00; /* Couleur du texte des boutons sombres */
+}
+
+button.dark-mode:hover {
+    background-color: #5a5a5a; /* Couleur au survol des boutons sombres */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Menu vertical sur petits écrans */
+        margin: 10px 0;
+    }
+}
