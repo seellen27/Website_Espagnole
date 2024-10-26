@@ -5,35 +5,46 @@
     box-sizing: border-box;
 }
 
+/* Déclaration des variables CSS */
+:root {
+    --primary-color: #ffcc00;
+    --primary-dark: #e6b800;
+    --background-light: #f4f4f4;
+    --background-dark: #121212;
+    --text-light: #333;
+    --text-dark: #ffffff;
+    --header-footer-bg: #35424a;
+    --footer-dark-bg: #1f1f1f;
+}
+
 /* Style général */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Couleur d'arrière-plan douce */
-    color: #333; /* Couleur du texte */
+    background-color: var(--background-light);
+    color: var(--text-light);
     padding: 20px;
-    padding-bottom: 50px; /* Ajout de padding pour le contenu afin d'éviter que le texte ne soit caché sous le footer */
-    transition: background-color 0.3s, color 0.3s; /* Transitions pour le mode sombre */
+    padding-bottom: 50px;
+    transition: background-color 0.3s, color 0.3s;
     text-align: justify;
-    text-justify: inter-word;
 }
 
 /* En-tête */
 header {
-    background: #35424a; /* Couleur de fond de l'en-tête */
-    color: #ffffff; /* Couleur du texte de l'en-tête */
+    background: var(--header-footer-bg);
+    color: var(--text-dark);
     padding: 10px 20px;
     text-align: center;
-    position: relative; /* Permet au bouton d'être positionné relativement à l'en-tête */
+    position: relative;
 }
 
-/* Positionnement du bouton du mode sombre à droite dans l'en-tête */
+/* Style du bouton du mode sombre */
 #toggle-dark-mode {
     position: absolute;
     top: 10px;
-    right: 20px; /* Aligne le bouton à droite, en gardant un espace de 20px */
+    right: 20px;
     padding: 10px 20px;
-    background-color: #ffcc00;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -41,7 +52,7 @@ header {
 }
 
 #toggle-dark-mode:hover {
-    background-color: #e6b800;
+    background-color: var(--primary-dark);
 }
 
 h1 {
@@ -64,89 +75,121 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff; /* Couleur des liens */
+    color: var(--text-dark);
     text-decoration: none;
-    transition: color 0.3s; /* Effet de transition sur le survol */
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ffcc00; /* Couleur au survol */
+    color: var(--primary-color);
 }
 
 /* Contenu principal */
 .container {
-    background: #ffffff; /* Couleur de fond du contenu clair */
+    background: #ffffff;
     padding: 20px;
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
-    transition: background-color 0.3s, color 0.3s; /* Transition pour le mode sombre */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h2 {
-    color: #35424a; /* Couleur des titres */
+    color: var(--header-footer-bg);
     margin-bottom: 15px;
+}
+
+/* Styles pour la section du quiz */
+#quiz {
+    background-color: #e0f7fa; /* Couleur de fond douce en mode clair */
+    padding: 20px; /* Espacement intérieur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+    margin-top: 20px; /* Marge au-dessus de la section du quiz */
 }
 
 /* Pied de page */
 footer {
     text-align: center;
     padding: 10px;
-    background: #35424a; /* Couleur de fond du pied de page */
-    color: #ffffff; /* Couleur du texte du pied de page */
-    position: fixed; /* Fixe le pied de page en bas de la fenêtre */
-    bottom: 0; /* Colle le pied de page en bas */
+    background: var(--header-footer-bg);
+    color: var(--text-dark);
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    transition: background-color 0.3s; /* Transition pour le mode sombre */
-    left: 0; /* S'assure que le pied de page s'étend sur toute la largeur */
+    transition: background-color 0.3s;
+    left: 0;
 }
 
 /* Styles pour les boutons */
 button {
-    background-color: #ffcc00; /* Couleur de fond des boutons */
+    background-color: var(--primary-color);
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Effet de transition */
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #e6b800; /* Couleur au survol */
+    background-color: var(--primary-dark);
 }
 
 /* Styles pour le mode sombre */
 body.dark-mode {
-    background-color: #121212; /* Couleur d'arrière-plan sombre */
-    color: #ffffff; /* Couleur du texte clair */
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
 
 header.dark-mode {
-    background: #35424a; /* Couleur de fond de l'en-tête (inchangée) */
+    background: var(--header-footer-bg);
 }
 
 .container {
-    background: #ffffff; /* Garder le fond clair dans le contenu même en mode sombre */
-    color: #333; /* Garder la couleur du texte claire */
+    background: #ffffff;
+    color: var(--text-light);
 }
 
 footer.dark-mode {
-    background: #1f1f1f; /* Couleur de fond du pied de page sombre */
+    background: var(--footer-dark-bg);
 }
 
 /* Boutons en mode sombre */
 button.dark-mode {
-    background-color: #3a3a3a; /* Couleur de fond des boutons sombres */
-    color: #ffcc00; /* Couleur du texte des boutons sombres */
+    background-color: #3a3a3a;
+    color: var(--primary-color);
 }
 
 button.dark-mode:hover {
-    background-color: #5a5a5a; /* Couleur au survol des boutons sombres */
+    background-color: #5a5a5a;
+}
+
+/* Résultat du quiz */
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--header-footer-bg);
 }
 
 /* Responsive */
 @media (max-width: 600px) {
     nav ul li {
-        display: block; /* Menu vertical sur petits écrans */
+        display: block;
         margin: 10px 0;
     }
+}
+
+/* Styles pour l'image centrée */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.centered-image {
+    max-width: 600px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+    border: 5px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
